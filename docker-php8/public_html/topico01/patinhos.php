@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .blue{
-            color:blue;
-        }
-    </style>
+    <title>Patinhos</title>
 </head>
 <body>
-        <h1>Patinhos</h1>
-<?php
-
-    $patinhos = 99;
-    while ($patinhos >= 1):
-?>            
-       <p>
-        <?= $patinhos?> foram passear <br>
-        Além das montanhas para brincar <br>
-        A mamae gritou: quá quá quá quá <br>
-        Mas só <?= --$patinhos ?> patinhos voltaram de lá
-       </p>
-
-<?php endwhile;
-?>
+    <?php
+        $patinhos = 99;
+        while($patinhos > 0) : 
+    ?>
+    <p>
+       <?= $patinhos ?> patinhos foram passear
+        Além das montanhas para brincar
+        A mamãe gritou: <?php
+        for ($i = 0; $i < $patinhos; $i++) {
+            echo "Quá, ";
+        }
+        ?>
+         mas so <?= (--$patinhos) ?> <?php if($patinhos <= 1) {echo "patinho";} else {echo "patinhos";} ?> voltaram de lá <br>
+    </p>
+    <?php:endwhile;?>
 </body>
 </html>
