@@ -22,7 +22,11 @@
 // var_dump($usu1);
 
 require_once("Funcionario.php");
+require_once("Departamento.php");
 $func = new Funcioario(1220.00, "Murilo");
-echo $func->getSalario();
-$func->setSalario(1000.00);
-echo $func->getSalario();
+
+$dep = new Departamento($func);
+$dep->addFuncionario(0);
+echo $dep->getFuncionarios()->getNome();
+
+var_dump($dep);
