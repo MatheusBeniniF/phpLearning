@@ -1,21 +1,23 @@
 <?php
 class Departamento {
     private $funcionario;
+    const IDENTIFICADOR = 789;
+    static $quantidade = 0;
 
-    public function __construct(Funcionario $funcionario){
-        $this->funcionario = $funcionario;
+    public function __construct($funcionario){
+        $this->funcionario = array();
     }
 
-    public function getFuncionario():Funcionario {
+    public function addFuncionario(int $funcionario){
+        $this->funcionario = $funcionario;
+        self::$quantidede++;
+    }
+
+    public function getFuncionarios() {
         return $this->funcionario;
     }
 
-    public function addFuncionario(int $index){
-        $this->funcionario = $funcionario;
+    public function getFuncionario(int $index) {
+        return $this->funcionarios[$index];
     }
-
-    public function getFuncionarios():Funcionario {
-        return $this->funcionario;
-    }
-
 }
